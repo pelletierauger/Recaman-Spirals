@@ -4,15 +4,14 @@ let Spiral = function() {
     this.sequence = [];
     this.index = 0;
     this.drawnIndex = 0;
-    this.dotsShown = 0;
-    for (let i = 0; i < 300000; i++) {
-        let x = cos(i) * i * 0.01;
-        let y = sin(i) * i * 0.01;
+    for (let i = 0; i < 3000000; i++) {
+        let x = cos(i) * i * 1;
+        let y = sin(i) * i * 1;
         this.addNumber(x, y);
     }
-    // for (let i = 0; i < 300000; i++) {
-    //     this.step();
-    // }
+    for (let i = 0; i < 300000; i++) {
+        this.step();
+    }
 };
 
 Spiral.prototype.step = function() {
@@ -56,22 +55,18 @@ Spiral.prototype.addNumber = function(x, y) {
 
 
 Spiral.prototype.showSpiral = function() {
-    for (let i = this.dotsShown; i < this.sequence.length; i++) {
-        if (this.numberLine[this.sequence[i]].v) {
-            let n = this.numberLine[this.sequence[i]];
-            let radius = map(this.sequence[i], 0, 50000, 1, 5);
-            ellipse(n.x, n.y, radius);
-            this.dotsShown++;
-        }
-    }
-    // for (let i = 0; i < 125; i++) {
-    //     let d = this.drawnIndex;
-    //     let x = cos(this.sequence[d]) * this.sequence[d] * 0.01;
-    //     let y = sin(this.sequence[d]) * this.sequence[d] * 0.01;
-    //     let radius = map(this.sequence[d], 0, 50000, 1, 5);
-    //     ellipse(x, y, radius);
-    //     this.drawnIndex++;
+    // for (let i = 0; i < this.numberLine.length; i++) {
+    //     let n = this.numberLine[i];
+    //     ellipse(n.x, n.y, 1);
     // }
+    for (let i = 0; i < 125; i++) {
+        let d = this.drawnIndex;
+        let x = cos(this.sequence[d]) * this.sequence[d] * 0.01;
+        let y = sin(this.sequence[d]) * this.sequence[d] * 0.01;
+        let radius = map(this.sequence[d], 0, 50000, 1, 5);
+        ellipse(x, y, radius);
+        this.drawnIndex++;
+    }
 
 };
 

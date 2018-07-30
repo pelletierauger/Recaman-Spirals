@@ -12,3 +12,13 @@ ffmpeg -f image2 -framerate 24 -i ./frames/april-at-the-docks/april-at-the-dock-
 ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals/recaman-spiral-%05d.png -vf palettegen /Volumes/WD001/animation-video-renders/palette-racaman.png
 
 ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals/recaman-spiral-%05d.png -i /Volumes/WD001/animation-video-renders/palette-racaman.png -lavfi paletteuse racaman-spirals.gif
+
+ffmpeg -f concat -safe 0 -r 30 -i frames.txt -i /Volumes/WD001/animation-video-renders/palette-racaman.png -lavfi paletteuse racaman-spirals-short.gif
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals-short/recaman-spiral-short-%05d.png -vf palettegen /Volumes/WD001/animation-video-renders/palette-racaman-short.png
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals-short/recaman-spiral-short-%05d.png -i /Volumes/WD001/animation-video-renders/palette-racaman-short.png -lavfi paletteuse racaman-spirals-short.gif
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals-mid/recaman-spiral-mid-%05d.png -i /Volumes/WD001/animation-video-renders/palette-racaman-short.png -lavfi paletteuse /Volumes/WD001/animation-video-renders/racaman-spirals-mid.gif
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals-semi-mid/recaman-spiral-semi-mid-%05d.png -i /Volumes/WD001/animation-video-renders/palette-racaman-short.png -lavfi paletteuse /Volumes/WD001/animation-video-renders/racaman-spirals-semi-mid.gif

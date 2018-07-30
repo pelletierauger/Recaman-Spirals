@@ -30,10 +30,11 @@ function setup() {
 function draw() {
     // background(210);
     translate(width / 2, height / 2);
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 300; i++) {
         // spiral.drawStep();
-        spiral.showSpiral();
+        spiral.step();
     }
+    spiral.showSpiral();
     if (exporting && frameCount < maxFrames) {
         frameExport();
     }
