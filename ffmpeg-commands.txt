@@ -1,0 +1,14 @@
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals/recaman-spiral-%05d.png -c:v libx264 -s 1440x1440 -pix_fmt yuv420p /Volumes/WD001/animation-video-renders/racaman-spirals-30fps.mp4
+
+A palettegen & paletteuse example that seems to work (from April 8th, 2018):
+
+
+ffmpeg -f image2 -framerate 24 -i ./frames/april-at-the-docks/april-at-the-dock-02-%05d.png -vf palettegen palette-docks-01b.png
+
+
+ffmpeg -f image2 -framerate 24 -i ./frames/april-at-the-docks/april-at-the-dock-02-%05d.png -i ffmpeg-commands/palette-docks-01b.png -lavfi paletteuse april-at-the-docks-02.gif
+
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals/recaman-spiral-%05d.png -vf palettegen /Volumes/WD001/animation-video-renders/palette-racaman.png
+
+ffmpeg -f image2 -framerate 30 -i /Volumes/WD001/animation-frames/racaman-spirals/recaman-spiral-%05d.png -i /Volumes/WD001/animation-video-renders/palette-racaman.png -lavfi paletteuse racaman-spirals.gif

@@ -1,7 +1,7 @@
 let looping = true;
 let socket, cnvs, ctx, canvasDOM;
-let fileName = "./frames/sketch";
-let maxFrames = 20;
+let fileName = "/Volumes/WD001/animation-frames/racaman-spirals-semi-mid/recaman-spiral-semi-mid";
+let maxFrames = 800;
 let spiral;
 
 function setup() {
@@ -9,8 +9,8 @@ function setup() {
     cnvs = createCanvas(windowWidth / 16 * 9, windowWidth / 16 * 9);
     ctx = cnvs.drawingContext;
     canvasDOM = document.getElementById('defaultCanvas0');
-    frameRate(30);
-    background(210);
+    frameRate(5);
+    background(255);
     fill(0, 255);
     // stroke(0, 255);
     noStroke();

@@ -59,11 +59,11 @@ Spiral.prototype.showSpiral = function() {
     //     let n = this.numberLine[i];
     //     ellipse(n.x, n.y, 1);
     // }
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 125; i++) {
         let d = this.drawnIndex;
-        let x = cos(this.sequence[d]) * this.sequence[d] * 0.001;
-        let y = sin(this.sequence[d]) * this.sequence[d] * 0.001;
-        let radius = map(this.sequence[d], 0, 50000, 1, 1.5);
+        let x = cos(this.sequence[d]) * this.sequence[d] * 0.01;
+        let y = sin(this.sequence[d]) * this.sequence[d] * 0.01;
+        let radius = map(this.sequence[d], 0, 50000, 1, 5);
         ellipse(x, y, radius);
         this.drawnIndex++;
     }
